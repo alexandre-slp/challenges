@@ -1,2 +1,2 @@
-# challenges
+# Challenges
 Algorithm Challenges
