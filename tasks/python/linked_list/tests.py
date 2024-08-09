@@ -1,5 +1,5 @@
 import pytest
-from solution.linked_list import Task, TasksManager
+from tasks.python.linked_list.solution import Task, TasksManager
 
 
 @pytest.fixture

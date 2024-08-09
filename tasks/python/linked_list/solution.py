@@ -1,5 +1,3 @@
-# Criar solução de lista simplesmente encadeada
-
 class Task:
     def __init__(self, name: str, description=''):
         self.name = name.lower()
