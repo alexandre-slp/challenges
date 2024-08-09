@@ -6,7 +6,7 @@ Cada tarefa possui um título e uma descrição. Todos os nomes e descrições s
 As tarefas devem ser mantidas na ordem de criação a menos que a ordem seja alterada explicitamente.  
 A posição inicial é 0 (zero) e a última é 1 a mais que a quantidade de tarefas existentes.  
 A assinatura das funções não pode ser alterada.  
-A estrutura deve implementar as funcionalidades descritas a baixo.  
+A estrutura deve implementar as funcionalidades descritas abaixo.  
 
 ### Funcionalidades:
 
