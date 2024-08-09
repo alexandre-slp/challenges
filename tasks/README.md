@@ -1,15 +1,18 @@
 # Gerenciamento de Lista de Tarefas
 
-Deve ser criada uma estrutura que gerenciem uma lista de tarefas.  
-Cada tarefa possui um título e uma descrição. Todos os nomes e descrições são minúsculos e sem caracteres especiais.  
+O foco do desafio é na lógica e na estrutura de dados utilizados para resolve-lo.  
+Deve ser criada uma estrutura que gerencie uma lista de tarefas.  
+Cada tarefa possui um título e uma descrição. Todos os nomes e descrições são minúsculos.  
 As tarefas devem ser mantidas na ordem de criação a menos que a ordem seja alterada explicitamente.  
 A posição inicial é 0 (zero) e a última é 1 a mais que a quantidade de tarefas existentes.  
-A estrutura deve implementar as funcionalidades descritas a baixo.
+A assinatura das funções não pode ser alterada.  
+A estrutura deve implementar as funcionalidades descritas a baixo.  
 
 ### Funcionalidades:
 
 - **Adicionar Tarefa**  
-  Descrição: Adiciona uma tarefa em uma posição específica ou ao final da lista caso não seja explicitamente indicada.  
+  Descrição: Adiciona uma tarefa em uma posição específica ou ao final da lista caso não seja explicitamente indicada. 
+Não podem ser inclusas tarefas com mesmo nome.  
   Função: _add_task (name, description, position)_
     - name [_obrigatório_]: Nome da tarefa.
     - description [_opcional_]: Descrição da tarefa.
