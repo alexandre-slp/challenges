@@ -1,5 +1,5 @@
 import pytest
-from solutions.linked_list import Task, TasksManager
+from solution.linked_list import Task, TasksManager
 
 
 @pytest.fixture
@@ -14,8 +14,9 @@ def tm():
     return task_manager
 
 
-@pytest.mark.add_task
+@pytest.mark.full
 class TestAddTask:
+    @pytest.mark.basic
     def test_add_task_first_task(self):
         tm = TasksManager()
         tm.add_task('task')
@@ -29,6 +30,7 @@ class TestAddTask:
         assert tm.tasks_quantity == 0
         assert tm.first_task is None
 
+    @pytest.mark.basic
     def test_add_task_without_position(self):
         tm = TasksManager()
         tm.add_task('task1')
@@ -75,12 +77,13 @@ class TestAddTask:
         assert tm.first_task.next.name == 'b'
         assert tm.first_task.next.next.name == 'c'
 
+    @pytest.mark.basic
     def test_add_task_same_name(self, tm):
         tm.add_task('a')
         assert tm.tasks_quantity == 3
 
 
-@pytest.mark.remove_task
+@pytest.mark.full
 class TestRemoveTask:
     def test_remove_first_task(self, tm):
         removed_task = tm.remove_task('a')
@@ -89,6 +92,7 @@ class TestRemoveTask:
         assert tm.first_task.name == 'b'
         assert tm.first_task.next.name == 'c'
 
+    @pytest.mark.basic
     def test_remove_second_task(self, tm):
         removed_task = tm.remove_task('b')
         assert removed_task.name == 'b'
@@ -111,6 +115,7 @@ class TestRemoveTask:
         assert tm.first_task.next.name == 'b'
         assert tm.first_task.next.next.name == 'c'
 
+    @pytest.mark.basic
     def test_remove_task_empty(self):
         tm = TasksManager()
         removed_task = tm.remove_task('task')
@@ -118,12 +123,13 @@ class TestRemoveTask:
         assert tm.tasks_quantity == 0
 
 
-@pytest.mark.find_task
+@pytest.mark.full
 class TestFindTask:
     def test_find_task_first_position(self, tm):
         position = tm.find_task('a')
         assert position == 0
 
+    @pytest.mark.basic
     def test_find_task_second_position(self, tm):
         position = tm.find_task('b')
         assert position == 1
@@ -136,12 +142,13 @@ class TestFindTask:
         position = tm.find_task('d')
         assert position == -1
 
+    @pytest.mark.basic
     def test_find_task_empty(self, tm):
         position = tm.find_task('d')
         assert position == -1
 
 
-@pytest.mark.move_task
+@pytest.mark.full
 class TestMoveTask:
     def test_move_first_task_to_first(self, tm):
         tm.move_task('a', 0)
@@ -155,6 +162,7 @@ class TestMoveTask:
         tm.move_task('a', 2)
         assert tm.find_task('a') == 2
 
+    @pytest.mark.basic
     def test_move_second_task_to_first(self, tm):
         tm.move_task('b', 0)
         assert tm.find_task('b') == 0
@@ -163,6 +171,7 @@ class TestMoveTask:
         tm.move_task('b', 1)
         assert tm.find_task('b') == 1
 
+    @pytest.mark.basic
     def test_move_second_task_to_last(self, tm):
         tm.move_task('b', 2)
         assert tm.find_task('b') == 2
@@ -184,8 +193,9 @@ class TestMoveTask:
         assert tm.find_task('task') == -1
 
 
-@pytest.mark.list_task
+@pytest.mark.full
 class TestListTasks:
+    @pytest.mark.basic
     def test_list_tasks(self, tm):
         tasks = tm.list_tasks()
         assert len(tasks) == 3
@@ -199,6 +209,7 @@ class TestListTasks:
         tasks = tm.list_tasks()
         assert tasks[0].name == 'task'
 
+    @pytest.mark.basic
     def test_list_tasks_empty(self):
         tm = TasksManager()
         tasks = tm.list_tasks()
