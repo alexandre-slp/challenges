@@ -4,7 +4,6 @@ O foco do desafio é na lógica e na estrutura de dados utilizados para resolve-
 Deve ser criada uma estrutura que gerencie uma lista de tarefas.  
 Cada tarefa possui um título e uma descrição. Todos os nomes e descrições são minúsculos.  
 As tarefas devem ser mantidas na ordem de criação a menos que a ordem seja alterada explicitamente.  
-A posição inicial é 0 (zero) e a última é 1 a mais que a quantidade de tarefas existentes.  
 A assinatura das funções não pode ser alterada.  
 A estrutura deve implementar as funcionalidades descritas abaixo.  
 
